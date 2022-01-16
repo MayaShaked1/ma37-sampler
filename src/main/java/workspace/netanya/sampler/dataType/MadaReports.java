@@ -14,6 +14,23 @@ public class MadaReports {
     private String takeDate;
     private String resultDate;
 
+    public MadaReports (String mdaCode,String idNum,String idType,String firstName,String lastName, String city,String street, String buildingNumber,
+                        String barcode,String getDate,String takeDate,String resultDate)
+    {
+        this.mdaCode=mdaCode;
+        this.idNum=idNum;
+        this.idType=idType;
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.city=city;
+        this.street=street;
+        this.buildingNumber=buildingNumber;
+        this.barcode=barcode;
+        this.getDate=getDate;
+        this.takeDate=takeDate;
+        this.resultDate=resultDate;
+    }
+
     public String getMdaCode() {
         return mdaCode;
     }
