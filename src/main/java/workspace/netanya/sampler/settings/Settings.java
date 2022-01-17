@@ -4,19 +4,37 @@ import java.io.*;
 import java.util.Properties;
 
 public class Settings {//config getters
+
+    public Properties getProperty() throws IOException {
+        InputStream input = new FileInputStream("src/main/resources/properties.properties");
+        Properties prop = new Properties();
+        // load a properties file
+        prop.load(input);
+        return prop;
+    }
+
     public String getCsvMada()
     {
         String csvPath = "";
-        try (InputStream input = new FileInputStream("src/main/resources/properties.properties")) {
-            Properties prop = new Properties();
-            // load a properties file
-            prop.load(input);
-            // get the property value and print it out
-            return prop.getProperty("csvSource");
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+       try {
+           Properties properties=getProperty();
+           return properties.getProperty("csvSource");
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
         return csvPath;
     }
+
+    public String getPath()
+    {
+        String path = "";
+        try {
+            Properties properties=getProperty();
+            return properties.getProperty("path");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return path;
+    }
+
 }
