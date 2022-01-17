@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        ArrayList<MadaReports> m=new ArrayList<>();
+        ArrayList<ArrayList<MadaReports>> m=new ArrayList<>();
         CsvReader c=new CsvReader();
         m=c.FileReaderETL("src/main/resources/MadaReports.csv");
 /*        for(int i = 0; i < 10; i++) {

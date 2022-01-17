@@ -28,16 +28,19 @@ public class CsvReader extends FileReaderETL {
         return new MadaReports(mdaCode,idNum,idType,firstName,lastName,city,street,buildingNumber,barcode,getDate,takeDate,resultDate);
     }
     private final static String COMMA_DELIMITER = ",";
-    public ArrayList<MadaReports> FileReaderETL(String fileName) throws IOException {
-        ArrayList<MadaReports> result = new ArrayList<>();
+    public ArrayList<ArrayList<MadaReports>> FileReaderETL(String fileName) throws IOException {
+        ArrayList<MadaReports> resultBeforeCutting = new ArrayList<>();
+        ArrayList<ArrayList<MadaReports>> resultAfterCutting = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {//"/tmp/username.csv"
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(COMMA_DELIMITER);
                 MadaReports m=madaReportsRecords(values);
-                result.add(m);
+                resultBeforeCutting.add(m);
             }
+            Cutter cut=new Cutter();
+            resultAfterCutting=cut.fileCutter(resultBeforeCutting);
         }
-        return result;
+        return resultAfterCutting;
     }
 }
