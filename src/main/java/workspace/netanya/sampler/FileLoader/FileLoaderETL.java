@@ -6,5 +6,5 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public abstract class FileLoaderETL {
-    public abstract void FileLoaderETL(ArrayList<ArrayList<MadaReports>> arrayListToLoad) throws IOException;
+    public abstract void FileLoaderETL(ArrayList<ArrayList<MadaReports>> arrayListToLoad) throws IOException,FileLoaderETLException;
 }

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class JsonLoader extends FileLoaderETL{
 
     @Override
-    public void FileLoaderETL(ArrayList<ArrayList<MadaReports>> arrayListToLoad) throws IOException {
+    public void FileLoaderETL(ArrayList<ArrayList<MadaReports>> arrayListToLoad) throws IOException,FileLoaderETLException {
         ObjectMapper objectMapper = new ObjectMapper();
         Settings s=new Settings();
         String path=s.getPath();
