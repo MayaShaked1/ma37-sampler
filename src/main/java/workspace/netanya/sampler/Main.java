@@ -18,6 +18,5 @@ public class Main {
         arrayListsMDA=c.FileReaderETL(s.getCsvMada());
         JsonLoader fileLoader=new JsonLoader();
         fileLoader.FileLoaderETL(arrayListsMDA);
-        //System.out.println(arrayListsMDA.toString());
     }
 }
