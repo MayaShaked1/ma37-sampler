@@ -12,12 +12,12 @@ public class LabTests {
     private String resultTestCorona;
     private String variant;
     private String testType;
-    private String joinDate;
+    /*private String joinDate;
     private String healthCareId;
-    private String healthCareName;
+    private String healthCareName;*/
 
     public LabTests (String idNum,String idType,String firstName,String lastName,String resultDate,String birthDate,String labCode,
-                     String stickerNumber,String resultTestCorona,String variant,String testType,String joinDate,String healthCareId,String healthCareName)
+                     String stickerNumber,String resultTestCorona,String variant,String testType)
     {
         this.idNum=idNum;
         this.idType=idType;
@@ -30,9 +30,9 @@ public class LabTests {
         this.resultTestCorona=resultTestCorona;
         this.variant=variant;
         this.testType=testType;
-        this.joinDate=joinDate;
+        /*this.joinDate=joinDate;
         this.healthCareId=healthCareId;
-        this.healthCareName=healthCareName;
+        this.healthCareName=healthCareName;*/
     }
 
     public String getIdNum() {
@@ -79,7 +79,7 @@ public class LabTests {
         return testType;
     }
 
-    public String getJoinDate() {
+/*    public String getJoinDate() {
         return joinDate;
     }
 
@@ -89,7 +89,7 @@ public class LabTests {
 
     public String getHealthCareName() {
         return healthCareName;
-    }
+    }*/
 
     public void setIdNum(String idNum) {
         this.idNum = idNum;
@@ -135,7 +135,7 @@ public class LabTests {
         this.testType = testType;
     }
 
-    public void setJoinDate(String joinDate) {
+/*    public void setJoinDate(String joinDate) {
         this.joinDate = joinDate;
     }
 
@@ -145,7 +145,7 @@ public class LabTests {
 
     public void setHealthCareName(String healthCareName) {
         this.healthCareName = healthCareName;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -160,9 +160,9 @@ public class LabTests {
                 ", stickerNumber=" + stickerNumber +
                 ", resultTestCorona=" + resultTestCorona+
                 ", variant=" + variant +
-                ", testType=" + testType +
+                ", testType=" + testType/* +
                 ", joinDate=" + joinDate +
                 ", healthCareId=" + healthCareId +
-                ", healthCareName=" + healthCareName ;
+                ", healthCareName=" + healthCareName */;
     }
 }

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Add <T> extends FileTransformerETL{
     @Override
     public void FileTransformerETL(ArrayList arrayListToLoad) throws IOException {
+        //a loop that will know which column to add from the config file(this function "send" id num & id type from arrayListToLoad). Then, call other function that will get the appropriate value. Adding the values to arraylist.
         /*HealthCareInfoProvider healthCareInfoProvider=new HealthCareInfoProvider();
         try {
             PersonInsured person=healthCareInfoProvider.fetchInfo(Integer.parseInt(idNum),Integer.parseInt(idType));

@@ -26,11 +26,13 @@ public class CsvReader <T> extends FileReaderETL {
         String resultTestCorona=records[8];
         String variant=records[9];
         String testType=records[10];
-        String joinDate=null;
+/*        String joinDate=null;
         String healthCareId=null;
-        String healthCareName=null;
+        String healthCareName=null;*/
+       /* return new LabTests(idNum,idType,firstName,lastName,resultDate,birthDate,labCode,stickerNumber,resultTestCorona,
+                variant,testType,joinDate,healthCareId,healthCareName);*/
         return new LabTests(idNum,idType,firstName,lastName,resultDate,birthDate,labCode,stickerNumber,resultTestCorona,
-                variant,testType,joinDate,healthCareId,healthCareName);
+                variant,testType);
     }
 
     public MadaReports madaReportsRecords (String [] records)
@@ -52,17 +54,14 @@ public class CsvReader <T> extends FileReaderETL {
     private final static String COMMA_DELIMITER = ",";
     public ArrayList<T> FileReaderETL(String fileName) throws FileReaderETLException, IOException {
         ArrayList<T> resultBeforeCutting = new ArrayList<T>();
-        //ArrayList<ArrayList<T>> resultAfterCutting = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(COMMA_DELIMITER);
-                T data= (T) madaReportsRecords(values); //mda
-                //T data= (T) labTestsRecords(values);
+                //T data= (T) madaReportsRecords(values); //mda
+                T data= (T) labTestsRecords(values); //lab
                 resultBeforeCutting.add(data);
             }
-            /*Cutter cut=new Cutter();
-            resultAfterCutting=cut.fileCutter(resultBeforeCutting);*/
         }
         return resultBeforeCutting;
     }

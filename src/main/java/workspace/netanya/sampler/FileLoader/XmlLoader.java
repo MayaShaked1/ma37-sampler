@@ -17,10 +17,6 @@ public class XmlLoader extends FileLoaderETL{
             String finalPath=path+element;
 
             xmlMapper.writeValue(new File(finalPath),arrayListToLoad.get(i));
-            //xmlMapper.setDefaultAttributes(labTests);
-            //File file = new File(finalPath);
-
-            //objectMapper.writeValue(new File(finalPath),arrayListToLoad.get(i));
         }
     }
 }

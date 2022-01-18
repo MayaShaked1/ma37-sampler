@@ -15,24 +15,23 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws IOException, FileReaderETLException, FileLoaderETLException {
         //Part A
-        ArrayList<ArrayList<MadaReports>> arrayListsMDA=new ArrayList<>();
+        /*ArrayList<ArrayList<MadaReports>> arrayListsMDA=new ArrayList<>();
         CsvReader c=new CsvReader();
         Settings s=new Settings();
         arrayListsMDA=c.FileCutter(c.FileReaderETL(s.getCsvMada()));
         JsonLoader fileLoader=new JsonLoader();
-        fileLoader.FileLoaderETL(arrayListsMDA,s.getPath());
+        fileLoader.FileLoaderETL(arrayListsMDA,s.getPath());*/
 
-        //Part B
+        //Part B-- does not work. Transform part does not work
         /*ArrayList<ArrayList<LabTests>> arrayListsLab=new ArrayList<>();
         CsvReader c=new CsvReader();
         Settings s=new Settings();
-        arrayListsLab=c.FileReaderETL(s.getCsvLab());
+        arrayListsLab=c.FileCutter(c.FileReaderETL(s.getCsvLab()));
+        //transform part
+
         //System.out.println(arrayListsLab.toString());
         XmlLoader fileLoader=new XmlLoader();
-        fileLoader.FileLoaderETL(arrayListsLab,s.getLabPath());*/
-        /*//transform
-        JsonLoader fileLoader=new JsonLoader();
-        fileLoader.FileLoaderETL(arrayListsLab,s.getLabPath());*/
-
+        fileLoader.FileLoaderETL(arrayListsLab,s.getLabPath());
+        */
     }
 }
