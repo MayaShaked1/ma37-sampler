@@ -1,5 +1,6 @@
 package workspace.netanya.sampler.FileReaderETL;
 
+import workspace.netanya.sampler.dataType.LabTests;
 import workspace.netanya.sampler.dataType.MadaReports;
 
 import java.io.FileReader;
@@ -8,6 +9,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CsvReader <T> extends FileReaderETL {
+
+    public LabTests labTestsRecords (String [] records)
+    {
+        String idNum=records[0];
+        String idType=records[1];
+        String firstName=records[2];
+        String lastName=records[3];
+        String resultDate=records[4];
+        String birthDate=records[5];
+        String labCode=records[6];
+        String stickerNumber=records[7];
+        String resultTestCorona=records[8];
+        String variant=records[9];
+        String testType=records[10];
+        String joinDate=null;
+        String healthCareId=null;
+        String healthCareName=null;
+        return new LabTests(idNum,idType,firstName,lastName,resultDate,birthDate,labCode,stickerNumber,resultTestCorona,
+                variant,testType,joinDate,healthCareId,healthCareName);
+    }
 
     public MadaReports madaReportsRecords (String [] records)
     {
@@ -26,21 +47,6 @@ public class CsvReader <T> extends FileReaderETL {
         return new MadaReports(mdaCode,idNum,idType,firstName,lastName,city,street,buildingNumber,barcode,getDate,takeDate,resultDate);
     }
     private final static String COMMA_DELIMITER = ",";
-/*    public ArrayList<ArrayList<MadaReports>> FileReaderETL(String fileName) throws FileReaderETLException, IOException {
-        ArrayList<MadaReports> resultBeforeCutting = new ArrayList<>();
-        ArrayList<ArrayList<MadaReports>> resultAfterCutting = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(COMMA_DELIMITER);
-                MadaReports m=madaReportsRecords(values);
-                resultBeforeCutting.add(m);
-            }
-            Cutter cut=new Cutter();
-            resultAfterCutting=cut.fileCutter(resultBeforeCutting);
-        }
-        return resultAfterCutting;
-    }*/
     public ArrayList<ArrayList<T>> FileReaderETL(String fileName) throws FileReaderETLException, IOException {
         ArrayList<T> resultBeforeCutting = new ArrayList<T>();
         ArrayList<ArrayList<T>> resultAfterCutting = new ArrayList<>();
@@ -48,8 +54,9 @@ public class CsvReader <T> extends FileReaderETL {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(COMMA_DELIMITER);
-                T m= (T) madaReportsRecords(values);
-                resultBeforeCutting.add(m);
+                //T data= (T) madaReportsRecords(values); //mda
+                T data= (T) labTestsRecords(values);
+                resultBeforeCutting.add(data);
             }
             Cutter cut=new Cutter();
             resultAfterCutting=cut.fileCutter(resultBeforeCutting);
