@@ -50,20 +50,28 @@ public class CsvReader <T> extends FileReaderETL {
         return new MadaReports(mdaCode,idNum,idType,firstName,lastName,city,street,buildingNumber,barcode,getDate,takeDate,resultDate);
     }
     private final static String COMMA_DELIMITER = ",";
-    public ArrayList<ArrayList<T>> FileReaderETL(String fileName) throws FileReaderETLException, IOException {
+    public ArrayList<T> FileReaderETL(String fileName) throws FileReaderETLException, IOException {
         ArrayList<T> resultBeforeCutting = new ArrayList<T>();
-        ArrayList<ArrayList<T>> resultAfterCutting = new ArrayList<>();
+        //ArrayList<ArrayList<T>> resultAfterCutting = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(COMMA_DELIMITER);
-                //T data= (T) madaReportsRecords(values); //mda
-                T data= (T) labTestsRecords(values);
+                T data= (T) madaReportsRecords(values); //mda
+                //T data= (T) labTestsRecords(values);
                 resultBeforeCutting.add(data);
             }
-            Cutter cut=new Cutter();
-            resultAfterCutting=cut.fileCutter(resultBeforeCutting);
+            /*Cutter cut=new Cutter();
+            resultAfterCutting=cut.fileCutter(resultBeforeCutting);*/
         }
+        return resultBeforeCutting;
+    }
+
+    public ArrayList<ArrayList<T>> FileCutter(ArrayList<T>resultBeforeCutting)
+    {
+        ArrayList<ArrayList<T>> resultAfterCutting = new ArrayList<>();
+        Cutter cut=new Cutter();
+        resultAfterCutting=cut.fileCutter(resultBeforeCutting);
         return resultAfterCutting;
     }
 }

@@ -1,8 +1,6 @@
 package workspace.netanya.sampler.FileLoader;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import workspace.netanya.sampler.dataType.MadaReports;
-import workspace.netanya.sampler.settings.Settings;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,8 +23,9 @@ public class JsonLoader <T> extends FileLoaderETL{
     }
 */
 
+
     @Override
-    public void FileLoaderETL(ArrayList arrayListToLoad,String path) throws IOException, FileLoaderETLException {
+    public void FileLoaderETL(ArrayList arrayListToLoad, String path) throws IOException, FileLoaderETLException {
         ObjectMapper objectMapper = new ObjectMapper();
         for(int i=0;i<arrayListToLoad.size();i++)
         {
