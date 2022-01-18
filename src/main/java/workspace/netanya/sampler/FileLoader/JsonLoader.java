@@ -26,10 +26,8 @@ public class JsonLoader <T> extends FileLoaderETL{
 */
 
     @Override
-    public void FileLoaderETL(ArrayList arrayListToLoad) throws IOException, FileLoaderETLException {
+    public void FileLoaderETL(ArrayList arrayListToLoad,String path) throws IOException, FileLoaderETLException {
         ObjectMapper objectMapper = new ObjectMapper();
-        Settings s=new Settings();
-        String path=s.getPath();
         for(int i=0;i<arrayListToLoad.size();i++)
         {
             String element="/file"+(i+1)+".json";

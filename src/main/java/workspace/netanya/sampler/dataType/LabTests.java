@@ -146,4 +146,23 @@ public class LabTests {
     public void setHealthCareName(String healthCareName) {
         this.healthCareName = healthCareName;
     }
+
+    @Override
+    public String toString() {
+        return "LabTests:" +
+                "idNum=" + idNum +
+                ", idType=" + idType +
+                ", firstName=" + firstName +
+                ", lastName=" + lastName +
+                ", resultDate=" + resultDate +
+                ", birthDate=" + birthDate +
+                ", labCode=" + labCode +
+                ", stickerNumber=" + stickerNumber +
+                ", resultTestCorona=" + resultTestCorona+
+                ", variant=" + variant +
+                ", testType=" + testType +
+                ", joinDate=" + joinDate +
+                ", healthCareId=" + healthCareId +
+                ", healthCareName=" + healthCareName ;
+    }
 }

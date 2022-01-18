@@ -1,5 +1,8 @@
 package workspace.netanya.sampler.FileReaderETL;
 
+import health_care_provider.HealthCareInfoProvider;
+import health_care_provider.errors.InvalidIdException;
+import health_care_provider.models.PersonInsured;
 import workspace.netanya.sampler.dataType.LabTests;
 import workspace.netanya.sampler.dataType.MadaReports;
 

@@ -6,5 +6,5 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public abstract class FileLoaderETL <T>{
-    public abstract void FileLoaderETL(ArrayList<ArrayList<T>> arrayListToLoad) throws IOException,FileLoaderETLException;
+    public abstract void FileLoaderETL(ArrayList<ArrayList<T>> arrayListToLoad,String path) throws IOException,FileLoaderETLException;
 }
