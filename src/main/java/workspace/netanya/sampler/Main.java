@@ -26,6 +26,7 @@ public class Main {
         CsvReader c=new CsvReader();
         Settings s=new Settings();
         arrayListsLab=c.FileReaderETL(s.getCsvLab());
+        //transform
         JsonLoader fileLoader=new JsonLoader();
         fileLoader.FileLoaderETL(arrayListsLab);
 
