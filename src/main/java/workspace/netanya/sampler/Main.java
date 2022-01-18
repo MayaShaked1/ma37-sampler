@@ -14,22 +14,22 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws IOException, FileReaderETLException, FileLoaderETLException {
         //Part A
-/*        ArrayList<ArrayList<MadaReports>> arrayListsMDA=new ArrayList<>();
+        ArrayList<ArrayList<MadaReports>> arrayListsMDA=new ArrayList<>();
         CsvReader c=new CsvReader();
         Settings s=new Settings();
         arrayListsMDA=c.FileReaderETL(s.getCsvMada());
         JsonLoader fileLoader=new JsonLoader();
-        fileLoader.FileLoaderETL(arrayListsMDA);*/
+        fileLoader.FileLoaderETL(arrayListsMDA);
 
         //Part B
-        ArrayList<ArrayList<LabTests>> arrayListsLab=new ArrayList<>();
+        /*ArrayList<ArrayList<LabTests>> arrayListsLab=new ArrayList<>();
         CsvReader c=new CsvReader();
         Settings s=new Settings();
         arrayListsLab=c.FileReaderETL(s.getCsvLab());
         //transform
         JsonLoader fileLoader=new JsonLoader();
         fileLoader.FileLoaderETL(arrayListsLab);
-
+*/
 
     }
 }

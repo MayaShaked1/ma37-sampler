@@ -49,4 +49,16 @@ public class Settings {//config getters
         return path;
     }
 
+    public String getLabPath()
+    {
+        String path = "";
+        try {
+            Properties properties=getProperty();
+            return properties.getProperty("pathLab");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return path;
+    }
+
 }
