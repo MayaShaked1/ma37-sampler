@@ -1,21 +1,21 @@
 package workspace.netanya.sampler.dataType;
 
-public class MadaReports {
-    private String mdaCode;
-    private String idNum;
-    private String idType;
-    private String firstName;
-    private String lastName;
-    private String city;
-    private String street;
-    private String buildingNumber;
-    private String barcode;
-    private String getDate;
-    private String takeDate;
-    private String resultDate;
+public class MadaReports <T>{
+    private T mdaCode;
+    private T idNum;
+    private T idType;
+    private T firstName;
+    private T lastName;
+    private T city;
+    private T street;
+    private T buildingNumber;
+    private T barcode;
+    private T getDate;
+    private T takeDate;
+    private T resultDate;
 
-    public MadaReports (String mdaCode,String idNum,String idType,String firstName,String lastName, String city,String street, String buildingNumber,
-                        String barcode,String getDate,String takeDate,String resultDate)
+    public MadaReports (T mdaCode,T idNum,T idType,T firstName,T lastName, T city,T street, T buildingNumber,
+                        T barcode,T getDate,T takeDate,T resultDate)
     {
         this.mdaCode=mdaCode;
         this.idNum=idNum;
@@ -31,99 +31,99 @@ public class MadaReports {
         this.resultDate=resultDate;
     }
 
-    public String getMdaCode() {
+    public T getMdaCode() {
         return mdaCode;
     }
 
-    public String getIdNum() {
+    public T getIdNum() {
         return idNum;
     }
 
-    public String getIdType() {
+    public T getIdType() {
         return idType;
     }
 
-    public String getFirstName() {
+    public T getFirstName() {
         return firstName;
     }
 
-    public String getLastName() {
+    public T getLastName() {
         return lastName;
     }
 
-    public String getCity() {
+    public T getCity() {
         return city;
     }
 
-    public String getStreet() {
+    public T getStreet() {
         return street;
     }
 
-    public String getBuildingNumber() {
+    public T getBuildingNumber() {
         return buildingNumber;
     }
 
-    public String getBarcode() {
+    public T getBarcode() {
         return barcode;
     }
 
-    public String getGetDate() {
+    public T getGetDate() {
         return getDate;
     }
 
-    public String getTakeDate() {
+    public T getTakeDate() {
         return takeDate;
     }
 
-    public String getResultDate() {
+    public T getResultDate() {
         return resultDate;
     }
 
-    public void setMdaCode(String mdaCode) {
+    public void setMdaCode(T mdaCode) {
         this.mdaCode = mdaCode;
     }
 
-    public void setIdNum(String idNum) {
+    public void setIdNum(T idNum) {
         this.idNum = idNum;
     }
 
-    public void setIdType(String idType) {
+    public void setIdType(T idType) {
         this.idType = idType;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(T firstName) {
         this.firstName = firstName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(T lastName) {
         this.lastName = lastName;
     }
 
-    public void setCity(String city) {
+    public void setCity(T city) {
         this.city = city;
     }
 
-    public void setStreet(String street) {
+    public void setStreet(T street) {
         this.street = street;
     }
 
-    public void setBuildingNumber(String buildingNumber) {
+    public void setBuildingNumber(T buildingNumber) {
         this.buildingNumber = buildingNumber;
     }
 
-    public void setBarcode(String barcode) {
+    public void setBarcode(T barcode) {
         this.barcode = barcode;
     }
 
-    public void setGetDate(String getDate) {
+    public void setGetDate(T getDate) {
         this.getDate = getDate;
     }
 
-    public void setTakeDate(String takeDate) {
+    public void setTakeDate(T takeDate) {
         this.takeDate = takeDate;
     }
 
-    public void setResultDate(String resultDate) {
+    public void setResultDate(T resultDate) {
         this.resultDate = resultDate;
     }
 

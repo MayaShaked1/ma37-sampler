@@ -5,6 +5,6 @@ import workspace.netanya.sampler.dataType.MadaReports;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public abstract class FileLoaderETL {
-    public abstract void FileLoaderETL(ArrayList<ArrayList<MadaReports>> arrayListToLoad) throws IOException,FileLoaderETLException;
+public abstract class FileLoaderETL <T>{
+    public abstract void FileLoaderETL(ArrayList<ArrayList<T>> arrayListToLoad) throws IOException,FileLoaderETLException;
 }

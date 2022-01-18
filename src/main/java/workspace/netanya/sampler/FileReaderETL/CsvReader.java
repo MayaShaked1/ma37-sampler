@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class CsvReader extends FileReaderETL {
+public class CsvReader <T> extends FileReaderETL {
 
     public MadaReports madaReportsRecords (String [] records)
     {
@@ -26,7 +26,7 @@ public class CsvReader extends FileReaderETL {
         return new MadaReports(mdaCode,idNum,idType,firstName,lastName,city,street,buildingNumber,barcode,getDate,takeDate,resultDate);
     }
     private final static String COMMA_DELIMITER = ",";
-    public ArrayList<ArrayList<MadaReports>> FileReaderETL(String fileName) throws FileReaderETLException, IOException {
+/*    public ArrayList<ArrayList<MadaReports>> FileReaderETL(String fileName) throws FileReaderETLException, IOException {
         ArrayList<MadaReports> resultBeforeCutting = new ArrayList<>();
         ArrayList<ArrayList<MadaReports>> resultAfterCutting = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
@@ -34,6 +34,21 @@ public class CsvReader extends FileReaderETL {
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(COMMA_DELIMITER);
                 MadaReports m=madaReportsRecords(values);
+                resultBeforeCutting.add(m);
+            }
+            Cutter cut=new Cutter();
+            resultAfterCutting=cut.fileCutter(resultBeforeCutting);
+        }
+        return resultAfterCutting;
+    }*/
+    public ArrayList<ArrayList<T>> FileReaderETL(String fileName) throws FileReaderETLException, IOException {
+        ArrayList<T> resultBeforeCutting = new ArrayList<T>();
+        ArrayList<ArrayList<T>> resultAfterCutting = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(COMMA_DELIMITER);
+                T m= (T) madaReportsRecords(values);
                 resultBeforeCutting.add(m);
             }
             Cutter cut=new Cutter();
