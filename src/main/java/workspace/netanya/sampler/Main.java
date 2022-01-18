@@ -21,10 +21,11 @@ public class Main {
         JsonLoader fileLoader=new JsonLoader();
         fileLoader.FileLoaderETL(arrayListsMDA);*/
 
+        //Part B
         ArrayList<ArrayList<LabTests>> arrayListsLab=new ArrayList<>();
         CsvReader c=new CsvReader();
         Settings s=new Settings();
-        arrayListsLab=c.FileReaderETL(s.getCsvMada());
+        arrayListsLab=c.FileReaderETL(s.getCsvLab());
         JsonLoader fileLoader=new JsonLoader();
         fileLoader.FileLoaderETL(arrayListsLab);
 

@@ -25,6 +25,18 @@ public class Settings {//config getters
         return csvPath;
     }
 
+    public String getCsvLab()
+    {
+        String csvPath = "";
+        try {
+            Properties properties=getProperty();
+            return properties.getProperty("csvSourceLab");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return csvPath;
+    }
+
     public String getPath()
     {
         String path = "";
